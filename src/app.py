@@ -1,11 +1,11 @@
 from flask import Flask, json
 from werkzeug.exceptions import HTTPException
 
-from src.routes.pong import ping
-from src.routes.jerseys import jerseys
-
 from database.config import Config
 from database.connection import db
+
+from src.routes.pong import ping
+from src.routes.jerseys import jerseys
 
 
 def create_app():
