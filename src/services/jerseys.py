@@ -22,7 +22,12 @@ class JerseysService:
         return jersey_dict
 
     def createJersey(self, data):
-        new_jersey = Jersey(name=data.get("name"), year=data.get("year"))
+        new_jersey = Jersey(
+            name=data.get("name"),
+            year=data.get("year"),
+            category=data.get("category"),
+            manufacturer=data.get("manufacturer"),
+        )
 
         db.session.add(new_jersey)
         db.session.commit()
@@ -37,6 +42,8 @@ class JerseysService:
 
         jersey.name = data.get("name", jersey.name)
         jersey.year = data.get("year", jersey.year)
+        jersey.category = data.get("category", jersey.category)
+        jersey.manufacturer = data.get("manufacturer", jersey.manufacturer)
         db.session.commit()
 
         return jersey.as_dict()
