@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "src"
+name = "futsuperstition-api"
 version = "0.1.0"
 description = ""
 authors = ["kenaioz <silvio.cesarrx@hotmail.com>"]
