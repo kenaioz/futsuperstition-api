@@ -1,7 +1,7 @@
 from database.connection import db
 
 
-class Jersey(db.Model):
+class Jerseys(db.Model):
     __tablename__ = "jerseys"
 
     id = db.Column(db.Integer, primary_key=True)
