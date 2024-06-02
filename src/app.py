@@ -6,6 +6,7 @@ from database.connection import db
 
 from src.routes.pong import ping
 from src.routes.jerseys import jerseys
+from src.routes.stadiums import stadiums
 
 
 def create_app():
@@ -13,7 +14,7 @@ def create_app():
     app.url_map.strict_slashes = False
     app.json.sort_keys = False
 
-    blueprints = [ping, jerseys]
+    blueprints = [ping, jerseys, stadiums]
 
     for blueprint in blueprints:
         app.register_blueprint(blueprint)
