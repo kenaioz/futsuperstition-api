@@ -10,6 +10,7 @@ from src.routes.stadiums import stadiums
 from src.routes.competitions import competitions
 from src.routes.locals import locals
 from src.routes.teams import teams
+from src.routes.options import options
 
 
 def create_app():
@@ -17,7 +18,15 @@ def create_app():
     app.url_map.strict_slashes = False
     app.json.sort_keys = False
 
-    blueprints = [ping, jerseys, stadiums, competitions, locals, teams]
+    blueprints = [
+        ping,
+        jerseys,
+        stadiums,
+        competitions,
+        locals,
+        teams,
+        options,
+    ]
 
     for blueprint in blueprints:
         app.register_blueprint(blueprint)

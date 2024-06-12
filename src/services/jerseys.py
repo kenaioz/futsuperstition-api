@@ -47,3 +47,12 @@ class JerseysService:
         db.session.commit()
 
         return jersey.as_dict()
+    
+    def delete(self, jersey_id):
+        jersey = Jersey.query.get(jersey_id)
+        if jersey is None:
+            abort(404, description="Jersey not found")
+        db.session.delete(jersey)
+        db.session.commit()
+        return {"message": "Jersey deleted"}
+

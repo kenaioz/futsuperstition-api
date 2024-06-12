@@ -5,7 +5,6 @@ competitions = Blueprint("competitions", __name__, url_prefix="/competitions")
 competitionsController = CompetitionsController()
 
 
-# Definindo as rotas de forma semelhante ao Node.js
 competitions.add_url_rule(
     "/", view_func=competitionsController.list, methods=["GET"]
 )

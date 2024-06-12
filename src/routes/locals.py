@@ -5,7 +5,6 @@ locals = Blueprint("locals", __name__, url_prefix="/locals")
 localsController = LocalsController()
 
 
-# Definindo as rotas de forma semelhante ao Node.js
 locals.add_url_rule("/", view_func=localsController.list, methods=["GET"])
 locals.add_url_rule(
     "/<int:id>", view_func=localsController.index, methods=["GET"]
