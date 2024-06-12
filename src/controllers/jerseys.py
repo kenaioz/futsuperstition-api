@@ -22,3 +22,7 @@ class JerseysController:
         data = request.get_json()
         updated_jersey = jerseysServices.updateJersey(id, data)
         return jsonify(updated_jersey), 200
+
+    def delete(self, id):
+        message = jerseysServices.deleteJersey(id)
+        return jsonify(message), 200

@@ -13,5 +13,8 @@ stadiums.add_url_rule(
     "/<int:id>", view_func=stadiumsController.update, methods=["PUT"]
 )
 stadiums.add_url_rule(
+    "/<int:id>", view_func=stadiumsController.delete, methods=["DELETE"]
+)
+stadiums.add_url_rule(
     "/", view_func=stadiumsController.create, methods=["POST"]
 )

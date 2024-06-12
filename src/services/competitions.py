@@ -46,3 +46,11 @@ class CompetitionsService:
         db.session.commit()
 
         return competition.as_dict()
+
+    def deleteCompetition(self, id):
+        competition = Competitions.query.get(id)
+        if competition is None:
+            abort(404, description="Competition not found")
+        db.session.delete(competition)
+        db.session.commit()
+        return {"message": "Competition deleted"}

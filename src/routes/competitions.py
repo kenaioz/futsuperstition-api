@@ -15,5 +15,8 @@ competitions.add_url_rule(
     "/<int:id>", view_func=competitionsController.update, methods=["PUT"]
 )
 competitions.add_url_rule(
+    "/<int:id>", view_func=competitionsController.delete, methods=["DELETE"]
+)
+competitions.add_url_rule(
     "/", view_func=competitionsController.create, methods=["POST"]
 )

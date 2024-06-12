@@ -22,3 +22,7 @@ class CompetitionsController:
         data = request.get_json()
         updated_competition = competitionsService.updateCompetition(id, data)
         return jsonify(updated_competition), 200
+
+    def delete(self, id):
+        message = competitionsService.deleteCompetition(id)
+        return jsonify(message), 200

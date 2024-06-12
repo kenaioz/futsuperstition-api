@@ -12,4 +12,7 @@ jerseys.add_url_rule(
 jerseys.add_url_rule(
     "/<int:id>", view_func=jerseysController.update, methods=["PUT"]
 )
+jerseys.add_url_rule(
+    "/<int:id>", view_func=jerseysController.delete, methods=["DELETE"]
+)
 jerseys.add_url_rule("/", view_func=jerseysController.create, methods=["POST"])

@@ -22,3 +22,7 @@ class StadiumsController:
         data = request.get_json()
         updated_stadium = stadiumsService.updateStadium(id, data)
         return jsonify(updated_stadium), 200
+
+    def delete(self, id):
+        message = stadiumsService.deleteStadium(id)
+        return jsonify(message), 200

@@ -12,4 +12,7 @@ locals.add_url_rule(
 locals.add_url_rule(
     "/<int:id>", view_func=localsController.update, methods=["PUT"]
 )
+locals.add_url_rule(
+    "/<int:id>", view_func=localsController.delete, methods=["DELETE"]
+)
 locals.add_url_rule("/", view_func=localsController.create, methods=["POST"])

@@ -12,4 +12,7 @@ teams.add_url_rule(
 teams.add_url_rule(
     "/<int:id>", view_func=teamsController.update, methods=["PUT"]
 )
+teams.add_url_rule(
+    "/<int:id>", view_func=teamsController.delete, methods=["DELETE"]
+)
 teams.add_url_rule("/", view_func=teamsController.create, methods=["POST"])

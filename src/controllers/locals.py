@@ -15,10 +15,14 @@ class LocalsController:
 
     def create(self):
         data = request.get_json()
-        new_local = localsService.createJersey(data)
+        new_local = localsService.createLocal(data)
         return jsonify(new_local), 201
 
     def update(self, id):
         data = request.get_json()
-        updated_local = localsService.updateJersey(id, data)
+        updated_local = localsService.updateLocal(id, data)
         return jsonify(updated_local), 200
+
+    def delete(self, id):
+        message = localsService.deleteLocal(id)
+        return jsonify(message), 200

@@ -45,3 +45,11 @@ class TeamsService:
         db.session.commit()
 
         return team.as_dict()
+
+    def deleteTeam(self, id):
+        team = Teams.query.get(id)
+        if team is None:
+            abort(404, description="Team not found")
+        db.session.delete(team)
+        db.session.commit()
+        return {"message": "Team deleted"}

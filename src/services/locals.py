@@ -21,7 +21,7 @@ class LocalsService:
 
         return local_dict
 
-    def createJersey(self, data):
+    def createLocal(self, data):
         new_local = Locals(
             name=data.get("name"),
             category=data.get("category"),
@@ -32,7 +32,7 @@ class LocalsService:
 
         return new_local.as_dict()
 
-    def updateJersey(self, id, data):
+    def updateLocal(self, id, data):
         local = Locals.query.get(id)
 
         if local is None:
@@ -43,3 +43,11 @@ class LocalsService:
         db.session.commit()
 
         return local.as_dict()
+
+    def deleteLocal(self, id):
+        local = Locals.query.get(id)
+        if local is None:
+            abort(404, description="Local not found")
+        db.session.delete(local)
+        db.session.commit()
+        return {"message": "Local deleted"}

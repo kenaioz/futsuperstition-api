@@ -22,3 +22,7 @@ class TeamsController:
         data = request.get_json()
         updated_team = teamsService.updateTeam(id, data)
         return jsonify(updated_team), 200
+
+    def delete(self, id):
+        message = teamsService.deleteTeam(id)
+        return jsonify(message), 200
