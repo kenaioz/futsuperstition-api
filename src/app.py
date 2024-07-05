@@ -11,6 +11,7 @@ from src.routes.competitions import competitions
 from src.routes.locals import locals
 from src.routes.teams import teams
 from src.routes.options import options
+from src.routes.dashboard import dashboard
 
 
 def create_app():
@@ -26,6 +27,7 @@ def create_app():
         locals,
         teams,
         options,
+        dashboard,
     ]
 
     for blueprint in blueprints:

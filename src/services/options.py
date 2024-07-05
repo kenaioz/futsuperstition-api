@@ -1,7 +1,5 @@
-from flask import abort
 from sqlalchemy import func, asc
 
-from database.connection import db
 from src.database.models.jerseys import Jerseys
 from src.database.models.teams import Teams
 from src.database.models.locals import Locals
